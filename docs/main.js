@@ -299,7 +299,7 @@ class EquipSet {
 		});
 	}
 }
-
+/*
 const data = {
 	"ふく": {
 		"でんせつのよろい": {
@@ -469,6 +469,7 @@ for (const clothes in data["ふく"]) {
 							data["せなか"][back],
 							data["あし"][leg]
 						);
+						
 						if (e.status.judge_condition(condition)) {
 							console.log(e);
 						}
@@ -482,3 +483,4 @@ for (const clothes in data["ふく"]) {
 }
 // console.log(e);
 //e.status.judge_condition(condition);
+*/
