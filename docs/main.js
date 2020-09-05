@@ -441,12 +441,15 @@ const data = {
     }
 }
     
-fetch("https://github.com/coolwind0202/denpa-equipment/blob/master/docs/data.json").then(
+*/
+
+fetch("https://coolwind0202.github.io/denpa-equipment/data.json").then(
     res => {
-        console.log(res);
+        console.log(res.json());
     }
 )
 
+/*
 const condition = new EquipEffect();
 condition["攻撃属性"] = "土攻撃";
 condition["その他"]["AP自動回復"] = 1;
