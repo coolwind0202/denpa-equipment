@@ -443,11 +443,9 @@ const data = {
     
 */
 
-fetch("https://coolwind0202.github.io/denpa-equipment/data.json").then(
-    res => {
-        console.log(res.json());
-    }
-)
+fetch("https://coolwind0202.github.io/denpa-equipment/data.json")
+	.then(res => res.json())
+	.then(result => console.log(result));
 
 /*
 const condition = new EquipEffect();
