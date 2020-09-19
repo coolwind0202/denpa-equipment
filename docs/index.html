@@ -6,7 +6,7 @@
     <link href="https://fonts.googleapis.com/css?family=Sawarabi+Gothic" rel="stylesheet">
 </head>
 <body>
-    <div class="form-contain">
+    <form class="form-contain">
         <div class="form-category">
             <h1 class="form-title">基本ステータス</h1>
             <p>
@@ -14,23 +14,23 @@
             </p>
             <div class="wrap-appropriate">
                 <span>
-                    <label for="attack-input">こうげきりょく</label>
-                    <input id="attack-input" type="number" max="999">
+                    <label for="こうげきりょく">こうげきりょく</label>
+                    <input id="こうげきりょく" type="number" max="999">
                 </span>
 
                 <span>
-                    <label for="defence-input">ぼうぎょりょく</label>
-                    <input id="defence-input" type="number" max="999">
+                    <label for="ぼうぎょりょく">ぼうぎょりょく</label>
+                    <input id="ぼうぎょりょく" type="number" max="999">
                 </span>
 
                 <span>
-                    <label for="speed-input">すばやさ</label>
-                    <input id="speed-input" type="number" max="999">
+                    <label for="すばやさ">すばやさ</label>
+                    <input id="すばやさ" type="number" max="999">
                 </span>
                 
                 <span>
-                    <label for="evasion-input">かいひりつ</label>
-                    <input id="evasion-input" type="number" max="999">
+                    <label for="かいひりつ">かいひりつ</label>
+                    <input id="かいひりつ" type="number" max="100">
                 </span>
             </div>
         </div>
@@ -48,32 +48,32 @@
                     それ以外を選択した場合には該当の攻撃属性が設定されている装備セットのみを検索します。
                 </p>
 
-                <input id="attack-attribute-none" name="attack-attribute" type="radio" checked>
-                <label for="attack-attribute-none">指定しない</label>
+                <input id="無属性" name="攻撃属性" type="radio" checked>
+                <label for="無属性">指定しない</label>
 
-                <input id="attack-attribute-fire" name="attack-attribute" type="radio">
-                <label for="attack-attribute-fire">火攻撃</label>
+                <input id="火攻撃" name="攻撃属性" type="radio">
+                <label for="火攻撃">火攻撃</label>
 
-                <input id="attack-attribute-ice" name="attack-attribute" type="radio">
-                <label for="attack-attribute-ice">氷攻撃</label>
+                <input id="氷攻撃" name="攻撃属性" type="radio">
+                <label for="氷攻撃">氷攻撃</label>
 
-                <input id="attack-attribute-wind" name="attack-attribute" type="radio">
-                <label for="attack-attribute-wind">風攻撃</label>
+                <input id="風攻撃" name="攻撃属性" type="radio">
+                <label for="風攻撃">風攻撃</label>
 
-                <input id="attack-attribute-soil" name="attack-attribute" type="radio">
-                <label for="attack-attribute-soil">土攻撃</label>
+                <input id="土攻撃" name="攻撃属性" type="radio">
+                <label for="土攻撃">土攻撃</label>
 
-                <input id="attack-attribute-electricity" name="attack-attribute" type="radio">
-                <label for="attack-attribute-electricity">電気攻撃</label>
+                <input id="電気攻撃" name="攻撃属性" type="radio">
+                <label for="電気攻撃">電気攻撃</label>
 
-                <input id="attack-attribute-water" name="attack-attribute" type="radio">
-                <label for="attack-attribute-water">水攻撃</label>
+                <input id="水攻撃" name="攻撃属性" type="radio">
+                <label for="水攻撃">水攻撃</label>
 
-                <input id="attack-attribute-light" name="attack-attribute" type="radio">
-                <label for="attack-attribute-light">光攻撃</label>
+                <input id="光攻撃" name="攻撃属性" type="radio">
+                <label for="光攻撃">光攻撃</label>
 
-                <input id="attack-attribute-dark" name="attack-attribute" type="radio">
-                <label for="attack-attribute-dark">闇攻撃</label>
+                <input id="闇攻撃" name="攻撃属性" type="radio">
+                <label for="闇攻撃">闇攻撃</label>
             </div>
 
             <div class="form-category">
@@ -82,44 +82,44 @@
                     攻撃時に相手に状態異常を付加する可能性のある装備セットを検索します。
                 </p>
 
-                <input id="abnormal-condition-poison" name="abnormal-condition" type="checkbox">
-                <label for="abnormal-condition-poison">+毒</label>
+                <input id="+毒" name="状態異常付加" type="checkbox">
+                <label for="+毒">+毒</label>
 
-                <input id="abnormal-condition-deadly-poison" name="abnormal-condition" type="checkbox">
-                <label for="abnormal-condition-deadly-poison">+猛毒</label>
+                <input id="+猛毒" name="状態異常付加" type="checkbox">
+                <label for="+猛毒">+猛毒</label>
 
-                <input id="abnormal-condition-palsy" name="abnormal-condition" type="checkbox">
-                <label for="abnormal-condition-palsy">+マヒ</label>
+                <input id="+マヒ" name="状態異常付加" type="checkbox">
+                <label for="+マヒ">+マヒ</label>
 
-                <input id="abnormal-condition-sleepiness" name="abnormal-condition" type="checkbox">
-                <label for="abnormal-condition-sleepiness">+ねむり</label>
+                <input id="+ねむり" name="状態異常付加" type="checkbox">
+                <label for="+ねむり">+ねむり</label>
 
-                <input id="abnormal-condition-sudden-death" name="abnormal-condition" type="checkbox">
-                <label for="abnormal-condition-sudden-death">+突然死</label>
+                <input id="+突然死" name="状態異常付加" type="checkbox">
+                <label for="+突然死">+突然死</label>
 
-                <input id="abnormal-condition-scald" name="abnormal-condition" type="checkbox">
-                <label for="abnormal-condition-scald">+やけど</label>
+                <input id="+やけど" name="状態異常付加" type="checkbox">
+                <label for="+やけど">+やけど</label>
 
-                <input id="abnormal-condition-smoke" name="abnormal-condition" type="checkbox">
-                <label for="abnormal-condition-smoke">+しもやけ</label>
+                <input id="+しもやけ" name="状態異常付加" type="checkbox">
+                <label for="+しもやけ">+しもやけ</label>
 
-                <input id="abnormal-condition-cold" name="abnormal-condition" type="checkbox">
-                <label for="abnormal-condition-cold">+かぜっぴき</label>
+                <input id="+かぜっぴき" name="状態異常付加" type="checkbox">
+                <label for="+かぜっぴき">+かぜっぴき</label>
 
-                <input id="abnormal-condition-muddy" name="abnormal-condition" type="checkbox">
-                <label for="abnormal-condition-muddy">+どろだらけ</label>
+                <input id="+どろだらけ" name="状態異常付加" type="checkbox">
+                <label for="+どろだらけ">+どろだらけ</label>
 
-                <input id="abnormal-condition-electric-shock" name="abnormal-condition" type="checkbox">
-                <label for="abnormal-condition-electric-shock">+かんでん</label>
+                <input id="+かんでん" name="状態異常付加" type="checkbox">
+                <label for="+かんでん">+かんでん</label>
 
-                <input id="abnormal-condition-flooded" name="abnormal-condition" type="checkbox">
-                <label for="abnormal-condition-flooded">+みずびたし</label>
+                <input id="+みずびたし" name="状態異常付加" type="checkbox">
+                <label for="+みずびたし">+みずびたし</label>
 
-                <input id="abnormal-condition-blind" name="abnormal-condition" type="checkbox">
-                <label for="abnormal-condition-blind">+ブラインド</label>
+                <input id="+ブラインド" name="状態異常付加" type="checkbox">
+                <label for="+ブラインド">+ブラインド</label>
 
-                <input id="abnormal-condition-curse" name="abnormal-condition" type="checkbox">
-                <label for="abnormal-condition-curse">+呪い</label>
+                <input id="+呪い" name="状態異常付加" type="checkbox">
+                <label for="+呪い">+呪い</label>
             </div>
         </div>
 
@@ -135,52 +135,52 @@
                     ※ 「ダメージ固定」は、入力値と同値のダメージ固定装備セットのみを検索します。
                 </p>
 
-                <input id="attack-one-kill" name="attack-add-status" type="checkbox">
-                <label for="attack-one-kill">一撃必殺</label>
+                <input id="一撃必殺" name="攻撃効果付与" type="checkbox">
+                <label for="一撃必殺">一撃必殺</label>
 
-                <input id="attack-power-down" name="attack-add-status" type="checkbox">
-                <label for="attack-power-down">攻撃おとし</label>
+                <input id="攻撃おとし" name="攻撃効果付与" type="checkbox">
+                <label for="攻撃おとし">攻撃おとし</label>
 
-                <input id="defence-power-down" name="attack-add-status" type="checkbox">
-                <label for="defence-power-down">防御おとし</label>
+                <input id="防御おとし" name="攻撃効果付与" type="checkbox">
+                <label for="防御おとし">防御おとし</label>
 
-                <input id="speed-power-down" name="attack-add-status" type="checkbox">
-                <label for="speed-power-down">素早さおとし</label>
+                <input id="素早さおとし" name="攻撃効果付与" type="checkbox">
+                <label for="素早さおとし">素早さおとし</label>
 
-                <input id="evasion-power-down" name="attack-add-status" type="checkbox">
-                <label for="evasion-power-down">回避おとし</label>
+                <input id="回避おとし" name="攻撃効果付与" type="checkbox">
+                <label for="回避おとし">回避おとし</label>
 
-                <input id="enemy-agitation" name="attack-add-status" type="checkbox">
-                <label for="enemy-agitation">興奮</label>
+                <input id="興奮" name="攻撃効果付与" type="checkbox">
+                <label for="興奮">興奮</label>
 
-                <input id="attack-infallible" name="attack-add-status" type="checkbox">
-                <label for="attack-infallible">必中</label>
+                <input id="必中" name="攻撃効果付与" type="checkbox">
+                <label for="必中">必中</label>
 
-                <input id="shield-not-work" name="attack-add-status" type="checkbox">
-                <label for="shield-not-work">シールド無視</label>
+                <input id="シールド無視" name="攻撃効果付与" type="checkbox">
+                <label for="シールド無視">シールド無視</label>
 
-                <input id="cooperation-attack" name="attack-add-status" type="checkbox">
-                <label for="cooperation-attack">れんけい</label>
+                <input id="れんけい" name="攻撃効果付与" type="checkbox">
+                <label for="れんけい">れんけい</label>
                 
-                <input id="number-of-antenna" name="attack-add-status" type="checkbox">
-                <label for="number-of-antenna">とくぎ数</label>
+                <input id="とくぎ数" name="攻撃効果付与" type="checkbox">
+                <label for="とくぎ数">とくぎ数</label>
 
                 <hr>
 
                 <div class="wrap-appropriate">
                     <span>
-                        <label for="number-of-attack">こうげき数</label>
-                        <input id="number-of-attack" name="attack-add-status" type="number" min="0" max="3" step="1">
+                        <label for="こうげき数">こうげき数</label>
+                        <input id="こうげき数" name="攻撃効果付与" type="number" min="0" max="3" step="1">
                     </span>
 
                     <span>
-                        <label for="attack-critical">クリティカル</label>
-                        <input id="attack-critical" name="attack-add-status" type="number" min="0" max="70" step="1">
+                        <label for="クリティカル">クリティカル</label>
+                        <input id="クリティカル" name="攻撃効果付与" type="number" min="0" max="70" step="1">
                     </span>
 
                     <span>
-                        <label for="damage-fixed">ダメージ固定</label>
-                        <input id="damage-fixed" name="attack-add-status" type="number" min="0" max="64" step="1">
+                        <label for="ダメージ固定">ダメージ固定</label>
+                        <input id="ダメージ固定" name="攻撃効果付与" type="number" min="0" max="64" step="1">
                     </span>
                 </div>
             </div>
@@ -189,14 +189,14 @@
                 <p>
                     攻撃時に複数人に攻撃できる装備セットを検索します。
                 </p>
-                <input id="none-enemy-attack" name="multi-enemy-attack" type="radio" checked>
-                <label for="none-enemy-attack">指定しない</label>
+                <input id="1人こうげき" name="複数人攻撃" type="radio" checked>
+                <label for="1人こうげき">指定しない</label>
 
-                <input id="three-enemy-attack" name="multi-enemy-attack" type="radio">
-                <label for="three-enemy-attack">3人こうげき</label>
+                <input id="3人こうげき" name="複数人攻撃" type="radio">
+                <label for="3人こうげき">3人こうげき</label>
 
-                <input id="five-enemy-attack" name="multi-enemy-attack" type="radio">
-                <label for="five-enemy-attack">5人こうげき</label>
+                <input id="5人こうげき" name="複数人攻撃" type="radio">
+                <label for="5人こうげき">5人こうげき</label>
             </div>
             <div class="form-category">
                 <h1 class="form-title">対タイプ等</h1>
@@ -208,48 +208,48 @@
 
                 <div class="wrap-appropriate">
                     <span>
-                        <label for="against-dragon">対竜</label>
-                        <input id="against-dragon" name="attack-against-type" type="number" min="1" step="0.01">
+                        <label for="対竜">対竜</label>
+                        <input id="対竜" name="対タイプ等" type="number" min="1" step="0.01">
                     </span>
 
                     <span>
-                        <label for="against-beast">対獣</label>
-                        <input id="against-beast" name="attack-against-type" type="number" min="1" step="0.01">
+                        <label for="対獣">対獣</label>
+                        <input id="対獣" name="対タイプ等" type="number" min="1" step="0.01">
                     </span>
 
                     <span>
-                        <label for="against-daemon">対魔</label>
-                        <input id="against-daemon" name="attack-against-type" type="number" min="1" step="0.01">
+                        <label for="対魔">対魔</label>
+                        <input id="対魔" name="対タイプ等" type="number" min="1" step="0.01">
                     </span>
 
                     <span>
-                        <label for="against-ghost">対霊</label>
-                        <input id="against-ghost" name="attack-against-type" type="number" min="1" step="0.01">
+                        <label for="対霊">対霊</label>
+                        <input id="対霊" name="対タイプ等" type="number" min="1" step="0.01">
                     </span>
 
                     <span>
-                        <label for="against-insect">対虫</label>
-                        <input id="against-insect" name="attack-against-type" type="number" min="1" step="0.01">
+                        <label for="対虫">対虫</label>
+                        <input id="対虫" name="対タイプ等" type="number" min="1" step="0.01">
                     </span>
 
                     <span>
-                        <label for="against-marine">対水</label>
-                        <input id="against-marine" name="attack-against-type" type="number" min="1" step="0.01">
+                        <label for="対水生">対水生</label>
+                        <input id="対水生" name="対タイプ等" type="number" min="1" step="0.01">
                     </span>
 
                     <span>
-                        <label for="against-plant">対植物</label>
-                        <input id="against-plant" name="attack-against-type" type="number" min="1" step="0.01">
+                        <label for="対植物">対植物</label>
+                        <input id="対植物" name="対タイプ等" type="number" min="1" step="0.01">
                     </span>
 
                     <span>
-                        <label for="against-virtue">対ぜん</label>
-                        <input id="against-virtue" name="attack-against-type" type="number" min="1" step="0.01">
+                        <label for="対ぜん">対ぜん</label>
+                        <input id="対ぜん" name="対タイプ等" type="number" min="1" step="0.01">
                     </span>
 
                     <span>
-                        <label for="against-evil">対あく</label>
-                        <input id="against-evil" name="attack-against-type" type="number" min="1" step="0.01">
+                        <label for="対あく">対あく</label>
+                        <input id="対あく" name="対タイプ等" type="number" min="1" step="0.01">
                     </span>
                 </div>
             </div>
@@ -262,53 +262,53 @@
                 </p>
                 <div class="wrap-appropriate">
                     <span>
-                        <label for="attack-power-doubling">こうげき倍増</label>
-                        <input id="attack-power-doubling" name="damage-doubling" type="number" min="1" step="0.01">
+                        <label for="こうげき">こうげき倍増</label>
+                        <input id="こうげき" name="ダメージ倍増" type="number" min="1" step="0.01">
                     </span>
 
                     <span>
-                        <label for="antenna-power-doubling">とくぎ倍増</label>
-                        <input id="antenna-power-doubling" name="damage-doubling" type="number" min="1" step="0.01">
+                        <label for="とくぎ">とくぎ倍増</label>
+                        <input id="とくぎ" name="ダメージ倍増" type="number" min="1" step="0.01">
                     </span>
 
                     <span>
-                        <label for="attack-fire-doubling">火攻撃倍増</label>
-                        <input id="attack-fire-doubling" name="damage-doubling" type="number" min="1" step="0.01">
+                        <label for="火属性">火攻撃倍増</label>
+                        <input id="火属性" name="ダメージ倍増" type="number" min="1" step="0.01">
                     </span>
 
                     <span>
-                        <label for="attack-ice-doubling">氷攻撃倍増</label>
-                        <input id="attack-ice-doubling" name="damage-doubling" type="number" min="1" step="0.01">
+                        <label for="氷属性">氷攻撃倍増</label>
+                        <input id="氷属性" name="ダメージ倍増" type="number" min="1" step="0.01">
                     </span>
 
                     <span>
-                        <label for="attack-wind-doubling">風攻撃倍増</label>
-                        <input id="attack-wind-doubling" name="damage-doubling" type="number" min="1" step="0.01">
+                        <label for="風属性">風攻撃倍増</label>
+                        <input id="風属性" name="ダメージ倍増" type="number" min="1" step="0.01">
                     </span>
 
                     <span>
-                        <label for="attack-soil-doubling">土攻撃倍増</label>
-                        <input id="attack-soil-doubling" name="damage-doubling" type="number" min="1" step="0.01">
+                        <label for="土属性">土攻撃倍増</label>
+                        <input id="土属性" name="ダメージ倍増" type="number" min="1" step="0.01">
                     </span>
 
                     <span>
-                        <label for="attack-electricity-doubling">電気攻撃倍増</label>
-                        <input id="attack-electricity-doubling" name="damage-doubling" type="number" min="1" step="0.01">
+                        <label for="電気属性">電気攻撃倍増</label>
+                        <input id="電気属性" name="ダメージ倍増" type="number" min="1" step="0.01">
                     </span>
 
                     <span>
-                        <label for="attack-water-doubling">水攻撃倍増</label>
-                        <input id="attack-water-doubling" name="damage-doubling" type="number" min="1" step="0.01">
+                        <label for="水属性">水攻撃倍増</label>
+                        <input id="水属性" name="ダメージ倍増" type="number" min="1" step="0.01">
                     </span>
 
                     <span>
-                        <label for="attack-light-doubling">光攻撃倍増</label>
-                        <input id="attack-light-doubling" name="damage-doubling" type="number" min="1" step="0.01">
+                        <label for="光属性">光攻撃倍増</label>
+                        <input id="光属性" name="ダメージ倍増" type="number" min="1" step="0.01">
                     </span>
 
                     <span>
-                        <label for="attack-dark-doubling">闇攻撃倍増</label>
-                        <input id="attack-dark-doubling" name="damage-doubling" type="number" min="1" step="0.01">
+                        <label for="闇属性">闇攻撃倍増</label>
+                        <input id="闇属性" name="ダメージ倍増" type="number" min="1" step="0.01">
                     </span>
                 </div>
             </div>
@@ -327,43 +327,43 @@
                 <div class="wrap-appropriate">
 
                     <span>
-                        <label for="resistance-fire">火たいせい</label>
-                        <input id="resistance-fire" name="resistance-attribute" type="number" min="0" max="9" step="1">
+                        <label for="火たいせい">火たいせい</label>
+                        <input id="火たいせい" name="属性耐性" type="number" min="0" max="9" step="1">
                     </span>
 
                     <span>
-                        <label for="resistance-ice">氷たいせい</label>
-                        <input id="resistance-ice" name="resistance-attribute" type="number" min="0" max="9" step="1">
+                        <label for="氷たいせい">氷たいせい</label>
+                        <input id="たいせい" name="属性耐性" type="number" min="0" max="9" step="1">
                     </span>
 
                     <span>
-                        <label for="resistance-wind">風たいせい</label>
-                        <input id="resistance-wind" name="resistance-attribute" type="number" min="0" max="9" step="1">
+                        <label for="風たいせい">風たいせい</label>
+                        <input id="風たいせい" name="属性耐性" type="number" min="0" max="9" step="1">
                     </span>
 
                     <span>
-                        <label for="resistance-soil">土たいせい</label>
-                        <input id="resistance-soil" name="resistance-attribute" type="number" min="0" max="9" step="1">
+                        <label for="土たいせい">土たいせい</label>
+                        <input id="土たいせい" name="属性耐性" type="number" min="0" max="9" step="1">
                     </span>
 
                     <span>
-                        <label for="resistance-electricity">電気たいせい</label>
-                        <input id="resistance-electricity" name="resistance-attribute" type="number" min="0" max="9" step="1">
+                        <label for="電気たいせい">電気たいせい</label>
+                        <input id="電気たいせい" name="属性耐性" type="number" min="0" max="9" step="1">
                     </span>
 
                     <span>
-                        <label for="resistance-water">水たいせい</label>
-                        <input id="resistance-water" name="resistance-attribute" type="number" min="0" max="9" step="1">
+                        <label for="水たいせい">水たいせい</label>
+                        <input id="水たいせい" name="属性耐性" type="number" min="0" max="9" step="1">
                     </span>
 
                     <span>
-                        <label for="resistance-light">光たいせい</label>
-                        <input id="resistance-light" name="resistance-attribute" type="number" min="0" max="9" step="1">
+                        <label for="光たいせい">光たいせい</label>
+                        <input id="光たいせい" name="属性耐性" type="number" min="0" max="9" step="1">
                     </span>
 
                     <span>
-                        <label for="resistance-dark">闇たいせい</label>
-                        <input id="resistance-dark" name="resistance-attribute" type="number" min="0" max="9" step="1">
+                        <label for="闇たいせい">闇たいせい</label>
+                        <input id="闇たいせい" name="属性耐性" type="number" min="0" max="9" step="1">
                     </span>
                 </div>
             </div>
@@ -371,73 +371,68 @@
                 <h1 class="form-title">状態異常耐性</h1>
                 <div class="wrap-appropriate">
                     <span>
-                        <label for="resistance-sudden-death">対突然死</label>
-                        <input id="resistance-sudden-death" name="resistance-abnormal-condition" type="number" min="0" max="9" step="1">
+                        <label for="対突然死">対突然死</label>
+                        <input id="対突然死" name="状態異常耐性" type="number" min="0" max="9" step="1">
                     </span>
 
                     <span>
-                        <label for="resistance-poison">毒たいせい</label>
-                        <input id="resistance-poison" name="resistance-abnormal-condition" type="number" min="0" max="9" step="1">
+                        <label for="毒たいせい">毒たいせい</label>
+                        <input id="毒たいせい" name="状態異常耐性" type="number" min="0" max="9" step="1">
                     </span>
 
                     <span>
-                        <label for="resistance-poison">毒たいせい</label>
-                        <input id="resistance-poison" name="resistance-abnormal-condition" type="number" min="0" max="9" step="1">
+                        <label for="マヒたいせい">マヒたいせい</label>
+                        <input id="マヒたいせい" name="状態異常耐性" type="number" min="0" max="9" step="1">
                     </span>
 
                     <span>
-                        <label for="resistance-palsy">マヒたいせい</label>
-                        <input id="resistance-palsy" name="resistance-abnormal-condition" type="number" min="0" max="9" step="1">
+                        <label for="ねむりたいせい">ねむりたいせい</label>
+                        <input id="ねむりたいせい" name="状態異常耐性" type="number" min="0" max="9" step="1">
                     </span>
 
                     <span>
-                        <label for="resistance-sleepiness">ねむりたいせい</label>
-                        <input id="resistance-sleepiness" name="resistance-abnormal-condition" type="number" min="0" max="9" step="1">
+                        <label for="やけどたいせい">やけどたいせい</label>
+                        <input id="やけどたいせい" name="状態異常耐性" type="number" min="0" max="9" step="1">
                     </span>
 
                     <span>
-                        <label for="resistance-scald">やけどたいせい</label>
-                        <input id="resistance-scald" name="resistance-abnormal-condition" type="number" min="0" max="9" step="1">
+                        <label for="しもやけたいせい">しもやけたいせい</label>
+                        <input id="しもやけたいせい" name="状態異常耐性" type="number" min="0" max="9" step="1">
                     </span>
 
                     <span>
-                        <label for="resistance-smoke">しもやけたいせい</label>
-                        <input id="resistance-smoke" name="resistance-abnormal-condition" type="number" min="0" max="9" step="1">
+                        <label for="かぜっぴきたいせい">かぜっぴきたいせい</label>
+                        <input id="かぜっぴきたいせい" name="状態異常耐性" type="number" min="0" max="9" step="1">
                     </span>
 
                     <span>
-                        <label for="resistance-cold">かぜっぴきたいせい</label>
-                        <input id="resistance-cold" name="resistance-abnormal-condition" type="number" min="0" max="9" step="1">
+                        <label for="どろだらけたいせい">どろだらけたいせい</label>
+                        <input id="どろだらけたいせい" name="状態異常耐性" type="number" min="0" max="9" step="1">
                     </span>
 
                     <span>
-                        <label for="resistance-muddy">どろだらけたいせい</label>
-                        <input id="resistance-muddy" name="resistance-abnormal-condition" type="number" min="0" max="9" step="1">
+                        <label for="かんでんたいせい">かんでんたいせい</label>
+                        <input id="かんでんたいせい" name="状態異常耐性" type="number" min="0" max="9" step="1">
                     </span>
 
                     <span>
-                        <label for="resistance-electric-shock">かんでんたいせい</label>
-                        <input id="resistance-electric-shock" name="resistance-abnormal-condition" type="number" min="0" max="9" step="1">
+                        <label for="水びたしたいせい">水びたしたいせい</label>
+                        <input id="水びたしたいせい" name="状態異常耐性" type="number" min="0" max="9" step="1">
                     </span>
 
                     <span>
-                        <label for="resistance-flooded">みずびたしたいせい</label>
-                        <input id="resistance-flooded" name="resistance-abnormal-condition" type="number" min="0" max="9" step="1">
+                        <label for="ブラインドたいせい">ブラインドたいせい</label>
+                        <input id="ブラインドたいせい" name="状態異常耐性" type="number" min="0" max="9" step="1">
                     </span>
 
                     <span>
-                        <label for="resistance-blind">ブラインドたいせい</label>
-                        <input id="resistance-blind" name="resistance-abnormal-condition" type="number" min="0" max="9" step="1">
+                        <label for="呪いたいせい">呪いたいせい</label>
+                        <input id="呪いたいせい" name="状態異常耐性" type="number" min="0" max="9" step="1">
                     </span>
 
                     <span>
-                        <label for="resistance-curse">呪いたいせい</label>
-                        <input id="resistance-curse" name="resistance-abnormal-condition" type="number" min="0" max="9" step="1">
-                    </span>
-
-                    <span>
-                        <label for="resistance-templation">ゆうわくたいせい</label>
-                        <input id="resistance-templation" name="resistance-abnormal-condition" type="number" min="0" max="9" step="1">
+                        <label for="ゆうわくたいせい">ゆうわくたいせい</label>
+                        <input id="ゆうわくたいせい" name="状態異常耐性" type="number" min="0" max="9" step="1">
                     </span>
                 </div>
             </div>
@@ -449,67 +444,65 @@
                     「うけながし（上限30%）」は、ゲーム中の装備効果と同様パーセントで指定します。<br>
                 </p>
 
-                <input id="guard-snap" name="guard-effect" type="checkbox">
-                <label for="guard-snap">逆ギレ</label>
+                <input id="逆ギレ" name="guard-effect" type="checkbox">
+                <label for="逆ギレ">逆ギレ</label>
 
-                <input id="guard-harden" name="guard-effect" type="checkbox">
-                <label for="guard-harden">硬化</label>
+                <input id="硬化" name="guard-effect" type="checkbox">
+                <label for="硬化">硬化</label>
 
-                <input id="guard-guts" name="guard-guts" type="checkbox">
-                <label for="guard-guts">こんじょう</label>
+                <input id="こんじょう" name="guard-effect" type="checkbox">
+                <label for="こんじょう">こんじょう</label>
 
-                <input id="guard-thorny" name="guard-effect" type="checkbox">
-                <label for="guard-thorny">トゲトゲ</label>
+                <input id="トゲトゲ" name="guard-effect" type="checkbox">
+                <label for="トゲトゲ">トゲトゲ</label>
 
-                <input id="guard-counter" name="guard-effect" type="checkbox">
-                <label for="guard-counter">カウンター</label>
+                <input id="カウンター" name="guard-effect" type="checkbox">
+                <label for="カウンター">カウンター</label>
 
-                <input id="guard-auto" name="guard-effect" type="checkbox">
-                <label for="guard-auto">オート防御</label>
+                <input id="オート防御" name="guard-effect" type="checkbox">
+                <label for="オート防御">オート防御</label>
 
-                <input id="guard-thorny" name="guard-effect" type="checkbox">
-                <label for="guard-thorny">トゲトゲ</label>
                 <hr>
 
                 <div class="wrap-appropriate">
                     <span>
-                        <label for="guard-cover">かばう</label>
-                        <input id="guard-cover" name="guard-effect" type="number" min="0" max="50" step="1">
+                        <label for="かばう">かばう</label>
+                        <input id="かばう" name="guard-effect" type="number" min="0" max="50" step="1">
                     </span>
 
                     <span>
-                        <label for="guard-templation">ゆうわく</label>
-                        <input id="guard-templation" name="guard-effect" type="number" min="0" max="30" step="1">
+                        <label for="ゆうわく">ゆうわく</label>
+                        <input id="ゆうわく" name="guard-effect" type="number" min="0" max="30" step="1">
                     </span>
 
                     <span>
-                        <label for="guard-reflection">反射</label>
-                        <input id="guard-reflection" name="guard-effect" type="number" min="0" max="100" step="1">
+                        <label for="反射">反射</label>
+                        <input id="反射" name="guard-effect" type="number" min="0" max="100" step="1">
                     </span>
 
                     <span>
-                        <label for="guard-become-ghost">ゴースト化</label>
-                        <input id="guard-become-ghost" name="guard-effect" type="number" min="0" max="75" step="1">
+                        <label for="ゴースト化">ゴースト化</label>
+                        <input id="ゴースト化" name="guard-effect" type="number" min="0" max="75" step="1">
                     </span>
 
                     <span>
-                        <label for="guard-illusion">まぼろし</label>
-                        <input id="guard-illusion" name="guard-effect" type="number" min="0" max="100" step="1">
+                        <label for="まぼろし">まぼろし</label>
+                        <input id="まぼろし" name="guard-effect" type="number" min="0" max="100" step="1">
                     </span>
 
                     <span>
-                        <label for="guard-parry">うけながし</label>
-                        <input id="guard-parry" name="guard-effect" type="number" min="0" max="30" step="1">
+                        <label for="うけながし">うけながし</label>
+                        <input id="うけながし" name="guard-effect" type="number" min="0" max="30" step="1">
                     </span>
 
                     <span>
-                        <label for="guard-fear">きょうふ</label>
-                        <input id="guard-fear" name="guard-effect" type="number" min="0" max="30" step="1">
+                        <label for="きょうふ">きょうふ</label>
+                        <input id="きょうふ" name="guard-effect" type="number" min="0" max="30" step="1">
                     </span>
 
                     <span>
-                        <label for="guard-stately">ふうかく</label>
-                        <input id="guard-stately" name="guard-effect" type="number" min="0" max="9" step="1">
+                        <label for="ふうかく">ふうかく</label>
+                        <input id="ふうかく" name="guard-effect" type="number" min="0" max="9" step="1">
                     </span>
                 </div>
 
@@ -520,32 +513,32 @@
                     （特定の属性の）攻撃の対象になりやすくなる効果の装備を検索します。
                 </p>
 
-                <input id="normal-target" name="target" type="checkbox">
-                <label for="normal-target">ターゲット</label>
+                <input id="ターゲット" name="ターゲット" type="checkbox">
+                <label for="ターゲット">ターゲット</label>
 
-                <input id="fire-target" name="target" type="checkbox">
-                <label for="fire-target">火ターゲット</label>
+                <input id="火ターゲット" name="ターゲット" type="checkbox">
+                <label for="火ターゲット">火ターゲット</label>
 
-                <input id="ice-target" name="target" type="checkbox">
-                <label for="ice-target">氷ターゲット</label>
+                <input id="氷ターゲット" name="ターゲット" type="checkbox">
+                <label for="氷ターゲット">氷ターゲット</label>
 
-                <input id="wind-target" name="target" type="checkbox">
-                <label for="wind-target">風ターゲット</label>
+                <input id="風ターゲット" name="ターゲット" type="checkbox">
+                <label for="風ターゲット">風ターゲット</label>
 
-                <input id="soil-target" name="target" type="checkbox">
-                <label for="soil-target">土ターゲット</label>
+                <input id="土ターゲット" name="ターゲット" type="checkbox">
+                <label for="土ターゲット">土ターゲット</label>
 
-                <input id="electricity-target" name="target" type="checkbox">
-                <label for="electricity-target">電ターゲット</label>
+                <input id="電ターゲット" name="ターゲット" type="checkbox">
+                <label for="電ターゲット">電ターゲット</label>
 
-                <input id="water-target" name="target" type="checkbox">
-                <label for="water-target">水ターゲット</label>
+                <input id="水ターゲット" name="ターゲット" type="checkbox">
+                <label for="水ターゲット">水ターゲット</label>
 
-                <input id="light-target" name="target" type="checkbox">
-                <label for="light-target">光ターゲット</label>
+                <input id="光ターゲット" name="ターゲット" type="checkbox">
+                <label for="光ターゲット">光ターゲット</label>
 
-                <input id="dark-target" name="target" type="checkbox">
-                <label for="dark-target">闇ターゲット</label>
+                <input id="闇ターゲット" name="ターゲット" type="checkbox">
+                <label for="闇ターゲット">闇ターゲット</label>
             </div>
             <div class="form-category">
                 <h1 class="form-title">〇〇ボディ</h1>
@@ -553,32 +546,32 @@
                 <p>
                     物理攻撃を受けた際に相手に状態異常を付加する効果のある装備を検索します。
                 </p>
-                <input id="abnormal-body-poison" name="abnormal-body" type="checkbox">
-                <label for="abnormal-body-poison">毒ボディ</label>
+                <input id="毒ボディ" name="〇〇ボディ" type="checkbox">
+                <label for="毒ボディ">毒ボディ</label>
 
-                <input id="abnormal-body-deadly-poison" name="abnormal-body" type="checkbox">
-                <label for="abnormal-body-deadly-poison">猛毒ボディ</label>
+                <input id="猛毒ボディ" name="〇〇ボディ" type="checkbox">
+                <label for="猛毒ボディ">猛毒ボディ</label>
 
-                <input id="abnormal-body-scald" name="abnormal-body" type="checkbox">
-                <label for="abnormal-body-scald">やけどボディ</label>
+                <input id="やけどボディ" name="〇〇ボディ" type="checkbox">
+                <label for="やけどボディ">やけどボディ</label>
 
-                <input id="abnormal-body-smoke" name="abnormal-body" type="checkbox">
-                <label for="abnormal-body-smoke">霜焼けボディ</label>
+                <input id="霜焼けボディ" name="〇〇ボディ" type="checkbox">
+                <label for="霜焼けボディ">霜焼けボディ</label>
 
-                <input id="abnormal-body-cold" name="abnormal-body" type="checkbox">
-                <label for="abnormal-body-cold">かぜボディ</label>
+                <input id="かぜボディ" name="〇〇ボディ" type="checkbox">
+                <label for="かぜボディ">かぜボディ</label>
 
-                <input id="abnormal-body-muddy" name="abnormal-body" type="checkbox">
-                <label for="abnormal-body-muddy">どろボディ</label>
+                <input id="どろボディ" name="〇〇ボディ" type="checkbox">
+                <label for="どろボディ">どろボディ</label>
 
-                <input id="abnormal-body-electric-shock" name="abnormal-body" type="checkbox">
-                <label for="abnormal-body-electric-shock">感電ボディ</label>
+                <input id="感電ボディ" name="〇〇ボディ" type="checkbox">
+                <label for="感電ボディ">感電ボディ</label>
 
-                <input id="abnormal-body-flooded" name="abnormal-body" type="checkbox">
-                <label for="abnormal-body-flooded">みずボディ</label>
+                <input id="みずボディ" name="〇〇ボディ" type="checkbox">
+                <label for="みずボディ">みずボディ</label>
 
-                <input id="abnormal-body-curse" name="abnormal-body" type="checkbox">
-                <label for="abnormal-body-curse">のろいボディ</label>
+                <input id="のろいボディ" name="〇〇ボディ" type="checkbox">
+                <label for="のろいボディ">のろいボディ</label>
             </div>
             <div class="form-category">
                 <h1 class="form-title">タイプガード</h1>
@@ -590,48 +583,48 @@
                 </p>
                 <div class="wrap-appropriate">
                     <span>
-                        <label for="guard-dragon">竜ガード</label>
-                        <input id="guard-dragon" name="type-guard" type="number" min="0" max="50" step="1">
+                        <label for="竜ガード">竜ガード</label>
+                        <input id="竜ガード" name="タイプガード" type="number" min="0" max="50" step="1">
                     </span>
 
                     <span>
-                        <label for="guard-beast">獣ガード</label>
-                        <input id="guard-beast" name="type-guard" type="number" min="0" max="50" step="1">
+                        <label for="獣ガード">獣ガード</label>
+                        <input id="獣ガード" name="タイプガード" type="number" min="0" max="50" step="1">
                     </span>
 
                     <span>
-                        <label for="guard-daemon">魔ガード</label>
-                        <input id="guard-daemon" name="type-guard" type="number" min="0" max="50" step="1">
+                        <label for="魔ガード">魔ガード</label>
+                        <input id="魔ガード" name="タイプガード" type="number" min="0" max="50" step="1">
                     </span>
 
                     <span>
-                        <label for="guard-ghost">霊ガード</label>
-                        <input id="guard-ghost" name="type-guard" type="number" min="0" max="50" step="1">
+                        <label for="霊ガード">霊ガード</label>
+                        <input id="霊ガード" name="タイプガード" type="number" min="0" max="50" step="1">
                     </span>
 
                     <span>
-                        <label for="guard-insect">虫ガード</label>
-                        <input id="guard-insect" name="type-guard" type="number" min="0" max="50" step="1">
+                        <label for="虫ガード">虫ガード</label>
+                        <input id="虫ガード" name="タイプガード" type="number" min="0" max="50" step="1">
                     </span>
 
                     <span>
-                        <label for="guard-marine">水生ガード</label>
-                        <input id="guard-marine" name="type-guard" type="number" min="0" max="50" step="1">
+                        <label for="水生ガード">水生ガード</label>
+                        <input id="水生ガード" name="タイプガード" type="number" min="0" max="50" step="1">
                     </span>
 
                     <span>
-                        <label for="guard-plant">植物ガード</label>
-                        <input id="guard-plant" name="type-guard" type="number" min="0" max="50" step="1">
+                        <label for="植物ガード">植物ガード</label>
+                        <input id="植物ガード" name="タイプガード" type="number" min="0" max="50" step="1">
                     </span>
 
                     <span>
-                        <label for="guard-virtue">ぜんガード</label>
-                        <input id="guard-virtue" name="type-guard" type="number" min="0" max="50" step="1">
+                        <label for="ぜんガード">ぜんガード</label>
+                        <input id="ぜんガード" name="タイプガード" type="number" min="0" max="50" step="1">
                     </span>
 
                     <span>
-                        <label for="guard-evil">あくガード</label>
-                        <input id="guard-evil" name="type-guard" type="number" min="0" max="50" step="1">
+                        <label for="あくガード">あくガード</label>
+                        <input id="あくガード" name="タイプガード" type="number" min="0" max="50" step="1">
                     </span>
                 </div>
             </div>
@@ -645,38 +638,38 @@
             </p>
             <div class="wrap-appropriate">
                 <span>
-                    <label for="hp-auto-recovery">HP自動回復</label>
-                    <input id="hp-auto-recovery" name="recovery" type="number" min="0" max="25" step="1">
+                    <label for="HP自動回復">HP自動回復</label>
+                    <input id="HP自動回復" name="recovery" type="number" min="0" max="25" step="1">
                 </span>
 
                 <span>
-                    <label for="recovery-effect">回復効果</label>
-                    <input id="recovery-effect" name="recovery" type="number" min="0" max="10.0" step="0.1">
+                    <label for="回復効果">回復効果</label>
+                    <input id="回復効果" name="recovery" type="number" min="0" max="10.0" step="0.1">
                 </span>
 
                 <span>
-                    <label for="hp-absorption">HP吸収</label>
-                    <input id="hp-absorption" name="recovery" type="number" min="0" step="1">
+                    <label for="HP吸収">HP吸収</label>
+                    <input id="HP吸収" name="recovery" type="number" min="0" step="1">
                 </span>
 
                 <span>
-                    <label for="max-hp">さいだいHP</label>
-                    <input id="max-hp" name="recovery" type="number" min="0" max="1000" step="1">
+                    <label for="さいだいHP">さいだいHP</label>
+                    <input id="さいだいHP" name="recovery" type="number" min="0" max="1000" step="1">
                 </span>
 
                 <span>
-                    <label for="ap-auto-recovery">AP自動回復</label>
-                    <input id="ap-auto-recovery" name="recovery" type="number" min="0" max="10" step="1">
+                    <label for="AP自動回復">AP自動回復</label>
+                    <input id="AP自動回復" name="recovery" type="number" min="0" max="10" step="1">
                 </span>
 
                 <span>
-                    <label for="ap-saving">AP節約</label>
-                    <input id="ap-saving" name="recovery" type="number" min="0" max="50" step="1">
+                    <label for="AP節約">AP節約</label>
+                    <input id="AP節約" name="recovery" type="number" min="0" max="50" step="1">
                 </span>
 
                 <span>
-                    <label for="max-ap">AP吸収</label>
-                    <input id="max-ap" name="recovery" type="number" min="0" step="1">
+                    <label for="さいだいAP">さいだいAP</label>
+                    <input id="さいだいAP" name="recovery" type="number" min="0" step="1">
                 </span>
             </div>
         </div>
@@ -687,54 +680,61 @@
                 未分類の効果はここにカテゴライズしています。
                 ※「加速」は1ターンあたりの加速回数です。
             </p>
-            <input id="anntena-down" name="other" type="checkbox">
-            <label for="anntena-down">アンテナダウン</label>
+            <input id="アンテナダウン" name="other" type="checkbox">
+            <label for="アンテナダウン">アンテナダウン</label>
 
-            <input id="floor-damage" name="other" type="checkbox">
-            <label for="floor-damage">床ダメージ無</label>
+            <input id="床ダメージ無" name="other" type="checkbox">
+            <label for="床ダメージ無">床ダメージ無</label>
 
-            <input id="floating" name="other" type="checkbox">
-            <label for="floating">浮遊</label>
+            <input id="浮遊" name="other" type="checkbox">
+            <label for="浮遊">浮遊</label>
 
             <div class="wrap-appropriate">
                 <span>
-                    <label for="exp">経験値</label>
-                    <input id="exp" name="other" type="number" min="1" max="2" step="0.05">
+                    <label for="経験値">経験値</label>
+                    <input id="経験値" name="other" type="number" min="1" max="2" step="0.05">
                 </span>
 
                 <span>
-                    <label for="gold">ゴールド</label>
-                    <input id="gold" name="other" type="number" min="0" max="3" step="0.05">
+                    <label for="ゴールド">ゴールド</label>
+                    <input id="ゴールド" name="other" type="number" min="0" max="3" step="0.05">
                 </span>
 
                 <span>
-                    <label for="normal-treasure">おたから</label>
-                    <input id="normal-treasure" name="other" type="number" min="0" max="4" step="0.05">
+                    <label for="おたから">おたから</label>
+                    <input id="おたから" name="other" type="number" min="0" max="4" step="0.05">
                 </span>
 
                 <span>
-                    <label for="rare-treasure">レア</label>
-                    <input id="rare-treasure" name="other" type="number" min="0" max="9" step="0.05">
+                    <label for="レア">レア</label>
+                    <input id="レア" name="other" type="number" min="0" max="9" step="0.05">
                 </span>
 
                 <span>
-                    <label for="super-rare-treasure">激レア</label>
-                    <input id="super-rare-treasure" name="other" type="number" min="0" max="19" step="0.05">
+                    <label for="激レア">激レア</label>
+                    <input id="激レア" name="other" type="number" min="0" max="19" step="0.05">
                 </span>
 
                 <span>
-                    <label for="capture">捕獲</label>
-                    <input id="capture" name="other" type="number" min="1" max="10" step="0.05">
+                    <label for="捕獲">捕獲</label>
+                    <input id="捕獲" name="other" type="number" min="1" max="10" step="0.05">
                 </span>
 
                 <span>
-                    <label for="escape">にげる</label>
-                    <input id="escape" name="other" type="number" min="0" max="100" step="1">
+                    <label for="にげる">にげる</label>
+                    <input id="にげる" name="other" type="number" min="0" max="100" step="1">
                 </span>
             </div>
 
         </div>
-    </div>
+        <div class="form-button">
+            以下のボタンを押下することで検索が開始されます。<br>
+            効果の指定種類数が多ければ多いほど、検索対象となる装備候補数が増大するため、検索に時間を要する場合があります。<br>
+            表示の都合上、検索は指定条件に見合う候補が100候補発見された時点で打ち切られます。<br>
+
+            <button id="confirm-button" type="button">検索する</button>
+        </div>
+    </form>
     <table>
         
     </table>

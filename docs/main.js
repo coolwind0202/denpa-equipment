@@ -50,7 +50,7 @@ class EquipEffect {
 			"浮遊":false, "攻撃おとし":false, "防御おとし":false, "素早さおとし": false, "回避おとし":false
 		};
 		this["その他"] = {
-			"ゆうわく":0, "攻撃人数":0, "こうげき数":0, "きょうふ": 0, "ふうかく":0, "HP自動回復":0,
+			"ゆうわく":0, "攻撃人数":1, "こうげき数":0, "きょうふ": 0, "ふうかく":0, "HP自動回復":0,
 			"回復効果": 1.0, "HP吸収":0, "さいだいHP": 0, "AP自動回復":0, "AP節約": 1.0, "さいだいAP":0, 
 			"加速":0, "経験値":1.0, "ゴールド":0, "おたから":0 ,"レア":0, "激レア":0, "ほかく":1.0, "にげる":0,"まぼろし":0
 		};
@@ -299,7 +299,7 @@ class EquipSet {
 		});
 	}
 }
-/*
+
 const data = {
 	"ふく": {
 		"でんせつのよろい": {
@@ -440,12 +440,52 @@ const data = {
         }
     }
 }
-    
-*/
 
-fetch("https://coolwind0202.github.io/denpa-equipment/data.json")
-	.then(res => res.json())
-	.then(result => console.log(result));
+const get_input = () => {
+	const condition = new EquipEffect();
+	for (const element of document.getElementsByTagName("input")) {
+		if (element.type != "radio" && element.type != "checkbox") {
+			for (const category_name in condition) {
+				for (const property_name in condition[category_name]) {
+					if (property_name == element.id) {
+						if (element.value) {
+							condition[category_name][property_name] = parseFloat(element.value);
+						}
+					}
+				}
+			}
+		} else if (element.type == "checkbox") {
+			for (const category_name in condition) {
+				for (const property_name in condition[category_name]) {
+					if (property_name == element.id) {
+						condition[category_name][property_name] = element.checked;
+					}
+				}
+			}
+		} else if (element.type == "radio") {
+			if (element.checked) {
+				console.log(element);
+				if (element.name == "攻撃属性") {
+					condition["攻撃属性"] = element.id;
+				} else if (element.name == "複数人攻撃") {
+					condition["その他"]["攻撃人数"] = parseInt(element.id);
+				}
+			}
+		}
+	}
+	console.log(condition);
+}
+
+const button = document.getElementById("confirm-button");
+button.addEventListener("click", () => {
+	get_input();
+});
+
+fetch("https://github.com/coolwind0202/denpa-equipment/blob/master/docs/data.json").then(
+    res => {
+		console.log(res);
+    }
+)
 
 /*
 const condition = new EquipEffect();
@@ -470,7 +510,6 @@ for (const clothes in data["ふく"]) {
 							data["せなか"][back],
 							data["あし"][leg]
 						);
-						
 						if (e.status.judge_condition(condition)) {
 							console.log(e);
 						}
@@ -482,6 +521,6 @@ for (const clothes in data["ふく"]) {
 		
 	}
 }
+*/
 // console.log(e);
 //e.status.judge_condition(condition);
-*/
