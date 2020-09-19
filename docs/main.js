@@ -354,6 +354,7 @@ button.addEventListener("click", () => {
 	
 	/* 連想配列の各部位の装備をループして判定 */
 	let i = 0;
+	let resolves = [];
 	for (const clothes in raw_data["ふく"]) {
 		for (const face in raw_data["かお"]) {
 			for (const neck in raw_data["くび"]) {
@@ -368,9 +369,13 @@ button.addEventListener("click", () => {
 								raw_data["せなか"][back],
 								raw_data["あし"][leg]
 							);
-							if (e.status.judge_condition(condition)) {
-								i++;
+							if (i > 100000) {
+								return;
 							}
+							if (e.status.judge_condition(condition)) {
+								resolves.push(e);
+							}
+							i++;
 						}
 					}
 				}
@@ -378,5 +383,5 @@ button.addEventListener("click", () => {
 			
 		}
 	}
-	console.log(i);
+	console.log(resolves);
 });
