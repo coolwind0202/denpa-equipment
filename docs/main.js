@@ -372,7 +372,7 @@ button.addEventListener("click", () => {
 							if (i > 100) {
 								return;
 							}
-							console.log(e.status.jusge_condition(condition), e);
+							console.log(e.status.judge_condition(condition), e);
 							i++;
 						}
 					}
