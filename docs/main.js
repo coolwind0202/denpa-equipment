@@ -481,7 +481,7 @@ button.addEventListener("click", () => {
 	get_input();
 });
 
-fetch("https://github.com/coolwind0202/denpa-equipment/blob/master/docs/data.json").then(
+fetch("https://coolwind0202.github.io/denpa-equipment/data.json").then(
     res => {
 		console.log(res);
     }
