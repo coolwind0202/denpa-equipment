@@ -369,12 +369,10 @@ button.addEventListener("click", () => {
 								raw_data["せなか"][back],
 								raw_data["あし"][leg]
 							);
-							if (i > 100000) {
+							if (i > 100) {
 								return;
 							}
-							if (e.status.judge_condition(condition)) {
-								resolves.push(e);
-							}
+							console.log(e.status.jusge_condition(condition), e);
 							i++;
 						}
 					}
