@@ -300,6 +300,13 @@ class EquipSet {
 	}
 }
 
+let raw_data = null;
+fetch("https://coolwind0202.github.io/denpa-equipment/data.json")
+	.then(res => res.json())
+	.then(data => {
+		raw_data = data;
+	});
+
 const get_input = () => {
 	const condition = new EquipEffect();
 	for (const element of document.getElementsByTagName("input")) {
@@ -332,52 +339,44 @@ const get_input = () => {
 			}
 		}
 	}
-	console.log(condition);
+	return condition;
 }
 
 const button = document.getElementById("confirm-button");
 button.addEventListener("click", () => {
-	get_input();
-});
+	const condition = get_input();
+	/* 指定効果を一切持っていない装備はraw_dataから除外して新しい連想配列を作成する処理 */
 
-fetch("https://coolwind0202.github.io/denpa-equipment/data.json")
-	.then(res => res.json())
-	.then(data => console.log(data));
-
-/*
-const condition = new EquipEffect();
-condition["攻撃属性"] = "土攻撃";
-condition["その他"]["AP自動回復"] = 1;
-condition["その他"]["加速"] = 1;
-condition["真偽値"]["オート防御"] = true;
-
-let i = 0;
-let e;
-for (const clothes in data["ふく"]) {
-	for (const face in data["かお"]) {
-		for (const neck in data["くび"]) {
-			for (const arm in data["うで"]) {
-				for (const back in data["せなか"]) {
-					for (const leg in data["あし"]) {
-						e = new EquipSet(
-							data["ふく"][clothes],
-							data["かお"][face],
-							data["くび"][neck],
-							data["うで"][arm],
-							data["せなか"][back],
-							data["あし"][leg]
-						);
-						if (e.status.judge_condition(condition)) {
-							console.log(e);
+	if (raw_data === null) {
+		alert("検索を行うための装備データのロードが完了していないため、検索できません。");
+		return;
+	}
+	
+	/* 連想配列の各部位の装備をループして判定 */
+	let i = 0;
+	for (const clothes in raw_data["ふく"]) {
+		for (const face in raw_data["かお"]) {
+			for (const neck in raw_data["くび"]) {
+				for (const arm in raw_data["うで"]) {
+					for (const back in raw_data["せなか"]) {
+						for (const leg in raw_data["あし"]) {
+							let e = new EquipSet(
+								raw_data["ふく"][clothes],
+								raw_data["かお"][face],
+								raw_data["くび"][neck],
+								raw_data["うで"][arm],
+								raw_data["せなか"][back],
+								raw_data["あし"][leg]
+							);
+							if (e.status.judge_condition(condition)) {
+								i++;
+							}
 						}
-						i++;
 					}
 				}
 			}
+			
 		}
-		
 	}
-}
-*/
-// console.log(e);
-//e.status.judge_condition(condition);
+	console.log(i);
+});
