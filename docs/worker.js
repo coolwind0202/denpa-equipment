@@ -96,7 +96,7 @@ class EquipEffect {
 }
 
 class EquipSet {
-    constructor(clothes,face,neck,arm,back,leg) {
+    constructor(clothes,face,neck,arm,back,leg,equip_names) {
         this.clothes = clothes;
         this.face = face;
         this.neck = neck;
@@ -104,8 +104,9 @@ class EquipSet {
         this.back = back;
         this.leg = leg;
         this.equips = [clothes,face,neck,arm,back,leg];
-		this.status = new EquipEffect();
-		this.get_status();
+	this.equip_names = equip_names
+	this.status = new EquipEffect();
+	this.get_status();
     }
 
     calculation_attr(attr_name,newer) {
@@ -315,12 +316,12 @@ self.addEventListener("message", e => {
 					for (const back in raw_data["せなか"]) {
 						for (const leg in raw_data["あし"]) {
 							let e = new EquipSet(
-								raw_data["ふく"][clothes],
-								raw_data["かお"][face],
-								raw_data["くび"][neck],
-								raw_data["うで"][arm],
-								raw_data["せなか"][back],
-								raw_data["あし"][leg]
+								{...raw_data["ふく"][clothes], "name":clothes},
+								{...raw_data["かお"][face], "name":face},
+								{...raw_data["くび"][neck], "name":neck},
+								{...raw_data["うで"][arm], "name":arm},
+								{...raw_data["せなか"][back], "name":back},
+								{...raw_data["あし"][leg], "name":leg}
 							);
 							if (i > 1000) {
 								self.postMessage("1000回の繰り返しを終了しました。")
