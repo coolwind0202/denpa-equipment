@@ -1,6 +1,5 @@
 self.addEventListener("message", e => {
 	/* 処理内容 */
-	return true;
 	const [raw_data, condition] = e.data;
 
 	let resolves = [];
