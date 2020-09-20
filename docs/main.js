@@ -138,6 +138,7 @@ const get_input = () => {
 }
 
 const reflect_output = (data) => {
+	console.log(data);
 	const table = document.getElementsByTagName("table")[0];
 	table.innerHTML = "";
 
