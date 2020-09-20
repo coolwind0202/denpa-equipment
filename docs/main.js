@@ -342,7 +342,16 @@ const get_input = () => {
 	return condition;
 }
 
+const reflect_output = (data) => {
+	const table = document.getElementById("table");
+
+	/* tableの子要素に追加する処理 */
+	console.log(data);
+}
+
 const button = document.getElementById("confirm-button");
+let now_searching_flag = false;
+
 button.addEventListener("click", () => {
 	const condition = get_input();
 	/* 指定効果を一切持っていない装備はraw_dataから除外して新しい連想配列を作成する処理 */
@@ -351,35 +360,19 @@ button.addEventListener("click", () => {
 		alert("検索を行うための装備データのロードが完了していないため、検索できません。");
 		return;
 	}
-	
-	/* 連想配列の各部位の装備をループして判定 */
-	let i = 0;
-	let resolves = [];
-	for (const clothes in raw_data["ふく"]) {
-		for (const face in raw_data["かお"]) {
-			for (const neck in raw_data["くび"]) {
-				for (const arm in raw_data["うで"]) {
-					for (const back in raw_data["せなか"]) {
-						for (const leg in raw_data["あし"]) {
-							let e = new EquipSet(
-								raw_data["ふく"][clothes],
-								raw_data["かお"][face],
-								raw_data["くび"][neck],
-								raw_data["うで"][arm],
-								raw_data["せなか"][back],
-								raw_data["あし"][leg]
-							);
-							if (i > 100) {
-								return;
-							}
-							console.log(e.status.judge_condition(condition), e);
-							i++;
-						}
-					}
-				}
-			}
-			
-		}
+
+	if (now_searching_flag) {
+		alert("現在検索を行っているため、新規に検索を開始できません。");
+		return;
 	}
-	console.log(resolves);
+	
+	let worker = new Worker("worker.js"); /* ボトルネックの処理なので、Web Workerに切り出した */
+
+	worker.addEventListener("message", e => {
+		reflect_output(e.data);
+		now_searching_flag = false;
+	});
+
+	worker.postMessage([raw_data, condition]);
+	now_searching_flag = true;
 });
