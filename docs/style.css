@@ -71,9 +71,15 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
     flex-wrap: wrap;
 }
 
-td, th {
+table {
     border-collapse: collapse;
     border:1px solid #333;
+}
+
+td, th {
+    padding: 5px;
+    text-align: center;
+    width: 15em;
 }
 
 th { 
