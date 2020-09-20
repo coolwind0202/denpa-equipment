@@ -324,7 +324,7 @@ self.addEventListener("message", e => {
 								{...raw_data["あし"][leg], "name":leg}
 							);
 							if (i > 1000) {
-								self.postMessage("1000回の繰り返しを終了しました。")
+								self.postMessage(resolves)
 								return;
 							}
 							if (e.status.judge_condition(condition)) {
@@ -343,6 +343,6 @@ self.addEventListener("message", e => {
 
 		}
 	}
-	self.postMessage("全組み合わせを探索しました。")
+	self.postMessage(resolves)
 
 	});
