@@ -144,7 +144,7 @@ const reflect_output = (data) => {
 	/* tableの子要素に追加する処理 */
 	for (const row of data) {
 		const tr = document.createElement("tr");
-		for (const part in row) {
+		for (const part in row.equips) {
 			const td = document.createElement("td");
 			td.innerHTML = part.name;
 			tr.appendChild(td);
