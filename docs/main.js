@@ -140,7 +140,10 @@ const get_input = () => {
 const reflect_output = (data) => {
 	console.log(data);
 	const table = document.getElementsByTagName("table")[0];
-	table.innerHTML = "";
+	const thead = table.getElementsByTagName("tr")[0];
+	while (table.lastChild !== thead) {
+		table.removeChild(lastChild);
+	}
 
 	/* tableの子要素に追加する処理 */
 	for (const row of data) {
