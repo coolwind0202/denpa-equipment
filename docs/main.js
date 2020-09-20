@@ -142,7 +142,7 @@ const reflect_output = (data) => {
 	const table = document.getElementsByTagName("table")[0];
 	const thead = table.getElementsByTagName("tr")[0];
 	while (table.lastChild !== thead) {
-		table.removeChild(lastChild);
+		table.removeChild(table.lastChild);
 	}
 
 	/* tableの子要素に追加する処理 */
