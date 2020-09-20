@@ -141,7 +141,7 @@ const reflect_output = (data) => {
 	console.log(data);
 	const table = document.getElementsByTagName("table")[0];
 	const thead = document.getElementsByTagName("tr")[0];
-	while (table.lastChild !== thead) {
+	while (table.lastChild && table.lastChild !== thead) {
 		table.removeChild(table.lastChild);
 	}
 
