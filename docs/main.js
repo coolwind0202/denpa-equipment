@@ -138,10 +138,19 @@ const get_input = () => {
 }
 
 const reflect_output = (data) => {
-	const table = document.getElementById("table");
+	const table = document.getElementsByTagName("table")[0];
+	table.innerHTML = "";
 
 	/* tableの子要素に追加する処理 */
-	console.log(data);
+	for (const row of data) {
+		const tr = document.createElement("tr");
+		for (const part in row) {
+			const td = document.createElement("td");
+			td.innerHTML = part.name;
+			tr.appendChild(td);
+		}
+		table.appendChild(tr);
+	}		
 }
 
 const button = document.getElementById("confirm-button");
