@@ -138,11 +138,13 @@ const get_input = () => {
 }
 
 const reflect_output = (data) => {
-	console.log(data);
 	const table = document.getElementsByTagName("table")[0];
-	const thead = document.getElementsByTagName("tr")[0];
-	while (table.lastChild && table.lastChild !== thead) {
-		table.removeChild(table.lastChild);
+	const trs = document.getElementsByTagName("tr");
+	let node_number = 0; /* 見出し行と通常行の区別のための数値 */
+	for (const tr of trs) {
+		node_number++;
+		if (node_number === 1) continue;
+		tr.parentNode.removeChild(tr);
 	}
 
 	/* tableの子要素に追加する処理 */
