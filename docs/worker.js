@@ -337,13 +337,13 @@ self.addEventListener("message", e => {
 						for (const leg of filtered_data["あし"]) {
 							let e = new EquipSet(clothes,face,neck,arm,back,leg);
 							if (i % 10000 == 0) {
-								self.postMessage("progress",`${i} パターン目を探索中`)
+								self.postMessage(["progress",`${i} パターン目を探索中`]);
 							}
 							if (e.status.judge_condition(condition)) {
 								resolves.push(e);
 								len_resolves++;
 								if (len_resolves >= 100) {
-									self.postMessage("result",resolves);
+									self.postMessage(["result",resolves]);
 				    					return;
 								}
 			    				}
@@ -355,6 +355,6 @@ self.addEventListener("message", e => {
 
 		}
 	}
-	self.postMessage("result",resolves)
+	self.postMessage(["result",resolves]);
 
 	});
