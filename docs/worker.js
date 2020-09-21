@@ -318,19 +318,15 @@ self.addEventListener("message", e => {
 		for (const equip_name in raw_data[part_name]) {
 			let input_compatible_flag = true;
 			for (const input_item of input_items) {
-				console.log(input_item, raw_data[part_name][equip_name]);
-				console.log(input_item in raw_data[part_name][equip_name]);
-				console.log(raw_data[part_name][equip_name].hasOwnProperty(input_item));
-				if (!(input_item in raw_data[part_name][equip_name])) {
 					input_compatible_flag = false;
 				}
 			}
 			if (input_compatible_flag) {
 				filtered_data[part_name].push({...raw_data[part_name][equip_name], "name": equip_name});
 			}
-			break; /* テスト用 */
+			/* break;  テスト用 */
 		}
-		break; /* テスト用 */
+		/* break;  テスト用 */
 		
 	}
 	console.log(filtered_data);
