@@ -345,6 +345,7 @@ self.addEventListener("message", e => {
 								self.postMessage(["hit",e])
 								len_resolves++;
 								if (len_resolves >= 100) {
+									self.postMessage(["end-search", null])
 				    					return;
 								}
 			    				}
