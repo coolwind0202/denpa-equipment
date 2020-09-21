@@ -146,8 +146,8 @@ const get_input = () => {
 }
 
 const reset_output = () => {
-	const table = document.getElementsByTagName("table")[0];
-	const trs = table.getElementsByTagName("tr");
+	const table = document.getElementsById("display-table");
+	const trs = document.querySelectorAll("#display-table > tr");
 	
 	for (const tr of trs) {
 		table.removeChild(tr);
