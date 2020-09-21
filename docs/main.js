@@ -145,15 +145,16 @@ const get_input = () => {
 	return [condition, input_items];
 }
 
+const reset_output = () => {
+	const tr = document.getElementsByTagName("tr")[0];
+	
+	tr.parentNode.removeChild(tr);
+}
+
 const reflect_output = (equip_set) => {
 	const table = document.getElementsByTagName("table")[0];
 	const trs = document.getElementsByTagName("tr");
 	let node_number = 0; /* 見出し行と通常行の区別のための数値 */
-	for (const tr of trs) {
-		node_number++;
-		if (node_number === 1) continue;
-		tr.parentNode.removeChild(tr);
-	}
 
 	/* tableの子要素に追加する処理 */
 	const tr = document.createElement("tr");
@@ -183,6 +184,7 @@ button.addEventListener("click", () => {
 		alert(`現在検索中のため、新規に検索を開始できません。`);
 		return;
 	}
+	reset_output();
 	
 	let worker = new Worker("worker.js"); /* ボトルネックの処理なので、Web Workerに切り出した */
 
