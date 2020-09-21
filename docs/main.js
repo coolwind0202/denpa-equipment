@@ -165,7 +165,7 @@ const button = document.getElementById("confirm-button");
 let now_searching_flag = false;
 
 button.addEventListener("click", () => {
-	const condition, input_items = get_input();
+	const [condition, input_items] = get_input();
 	/* 指定効果を一切持っていない装備はraw_dataから除外して新しい連想配列を作成する処理 */
 
 	if (raw_data === null) {
