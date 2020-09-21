@@ -318,12 +318,9 @@ self.addEventListener("message", e => {
 		for (const equip_name in raw_data[part_name]) {
 			let input_compatible_flag = true;
 			for (const input_item of input_items) {
-				if (!raw_data[part_name][equip_name].hasOwnProperty(input_item)) {
-					input_compatible_flag = false;
+				if (raw_data[part_name][equip_name].hasOwnProperty(input_item)) {
+					filtered_data[part_name].push({...raw_data[part_name][equip_name], "name": equip_name});
 				}
-			}
-			if (input_compatible_flag) {
-				filtered_data[part_name].push({...raw_data[part_name][equip_name], "name": equip_name});
 			}
 		}
 		
