@@ -156,15 +156,13 @@ const reflect_output = (data) => {
 	}
 
 	/* tableの子要素に追加する処理 */
-	for (const row in data) {
-		const tr = document.createElement("tr");
-		for (const part of row.equips) {
-			const td = document.createElement("td");
-			td.innerHTML = part.name;
-			tr.appendChild(td);
-		}
-		table.appendChild(tr);
-	}		
+	const tr = document.createElement("tr");
+	for (const part of data) {
+		const td = document.createElement("td");
+		td.innerHTML = part.name;
+		tr.appendChild(td);
+	}
+	table.appendChild(tr);
 }
 
 const button = document.getElementById("confirm-button");
