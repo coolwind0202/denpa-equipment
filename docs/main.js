@@ -169,6 +169,7 @@ const reflect_output = (data) => {
 
 const button = document.getElementById("confirm-button");
 const progress = document.getElementsByTagName("progress")[0];
+const state_num = document.getElementById("state_num");
 let now_searching_flag = false;
 
 button.addEventListener("click", () => {
@@ -191,6 +192,7 @@ button.addEventListener("click", () => {
 		const [response_type, data] = e.data;
 		if (response_type == "start-search") {
 			progress.max = data;
+			state_num.innerHTML = data;
 		} else if (response_type == "progress") {
 			progress.value = data;
 		} else if (response_type == "result") {
