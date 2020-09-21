@@ -182,7 +182,7 @@ button.addEventListener("click", () => {
 	}
 
 	if (now_searching_flag) {
-		alert(`現在検索を行っているため、新規に検索を開始できません。\nログデータ：${last_progress}`);
+		alert(`${last_progress} 新規に検索を開始できません。`);
 		return;
 	}
 	
