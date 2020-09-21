@@ -310,7 +310,6 @@ self.addEventListener("message", e => {
 	 * input_items - 入力が行われた項目 - Array
 	 */
 
-	let resolves = [];
 	let len_resolves = 0;
 	let i = 0;
 	let number_of_candidates = 1;
@@ -343,10 +342,9 @@ self.addEventListener("message", e => {
 								self.postMessage(["progress",i]);
 							}
 							if (e.status.judge_condition(condition)) {
-								resolves.push(e);
+								self.postMessage(["hit",e])
 								len_resolves++;
 								if (len_resolves >= 100) {
-									self.postMessage(["result",resolves]);
 				    					return;
 								}
 			    				}
@@ -358,6 +356,4 @@ self.addEventListener("message", e => {
 
 		}
 	}
-	self.postMessage(["result",resolves]);
-
 	});
