@@ -356,4 +356,5 @@ self.addEventListener("message", e => {
 
 		}
 	}
+	self.postMessage(["end-search", null])
 	});
