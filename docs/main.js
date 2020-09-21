@@ -157,13 +157,14 @@ const reset_output = () => {
 }
 
 const reflect_output = (equip_set) => {
+	console.log(equip_set)
 	const table = document.getElementsByTagName("table")[0];
 	const trs = document.getElementsByTagName("tr");
 	let node_number = 0; /* 見出し行と通常行の区別のための数値 */
 
 	/* tableの子要素に追加する処理 */
 	const tr = document.createElement("tr");
-	for (const part in equip_set.equips) {
+	for (const part of equip_set.equips) {
 		const td = document.createElement("td");
 		td.innerHTML = part.name;
 		tr.appendChild(td);
