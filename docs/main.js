@@ -146,13 +146,11 @@ const get_input = () => {
 }
 
 const reset_output = () => {
-	const trs = document.getElementsByTagName("tr");
-	let i = 0;
+	const table = document.getElementsByTagName("table")[0];
+	const trs = table.getElementsByTagName("tr");
 	
 	for (const tr of trs) {
-		i++;
-		if (i == 1) continue;
-		tr.parentNode.removeChild(tr);
+		table.removeChild(tr);
 	}
 }
 
