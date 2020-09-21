@@ -105,7 +105,7 @@ fetch("https://coolwind0202.github.io/denpa-equipment/data.json")
 const get_input = () => {
 	const condition = new EquipEffect();
 	const input_items = [];
-	for (const element of document.getElementsByTagName("input")) {
+	for (const element of document.getElementsByTagName("input")) {	
       		if (element.type=="radio" || element.type=="checkbox") {
         		if (element.defaultChecked !== element.checked && element.checked) {
           			input_items.push(element.id);
@@ -134,7 +134,6 @@ const get_input = () => {
 			}
 		} else if (element.type == "radio") {
 			if (element.checked) {
-				console.log(element);
 				if (element.name == "攻撃属性") {
 					condition["攻撃属性"] = element.id;
 				} else if (element.name == "複数人攻撃") {
@@ -143,7 +142,7 @@ const get_input = () => {
 			}
 		}
 	}
-	return condition, input_items;
+	return [condition, input_items];
 }
 
 const reflect_output = (data) => {
