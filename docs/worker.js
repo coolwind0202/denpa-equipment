@@ -333,7 +333,7 @@ self.addEventListener("message", e => {
 		break; /* テスト用 */
 		
 	}
-	
+	console.log(filtered_data);
 	
 	for (const clothes of filtered_data["ふく"]) {
 		for (const face of filtered_data["かお"]) {
