@@ -104,7 +104,9 @@ fetch("https://coolwind0202.github.io/denpa-equipment/data.json")
 
 const get_input = () => {
 	const condition = new EquipEffect();
+	const input_items = [];
 	for (const element of document.getElementsByTagName("input")) {
+		if (element.defaultValue !== element.value) input_items.push(element.id);
 		if (element.type != "radio" && element.type != "checkbox") {
 			for (const category_name in condition) {
 				for (const property_name in condition[category_name]) {
@@ -134,7 +136,7 @@ const get_input = () => {
 			}
 		}
 	}
-	return condition;
+	return condition, input_items;
 }
 
 const reflect_output = (data) => {
@@ -163,7 +165,7 @@ const button = document.getElementById("confirm-button");
 let now_searching_flag = false;
 
 button.addEventListener("click", () => {
-	const condition = get_input();
+	const condition, input_items = get_input();
 	/* 指定効果を一切持っていない装備はraw_dataから除外して新しい連想配列を作成する処理 */
 
 	if (raw_data === null) {
@@ -188,6 +190,6 @@ button.addEventListener("click", () => {
 		now_searching_flag = false;
 	});
 
-	worker.postMessage([raw_data, condition]);
+	worker.postMessage([raw_data, condition, input_items]);
 	now_searching_flag = true;
 });
