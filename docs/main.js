@@ -146,7 +146,7 @@ const get_input = () => {
 }
 
 const reset_output = () => {
-	const table = document.getElementsById("display-table");
+	const table = document.getElementById("display-table");
 	const trs = document.querySelectorAll("#display-table > tr");
 	
 	for (const tr of trs) {
