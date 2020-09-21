@@ -314,6 +314,7 @@ self.addEventListener("message", e => {
 	let len_resolves = 0;
 	let i = 0;
 	const filtered_data = {"ふく": [], "かお": [], "くび": [], "うで": [], "せなか":[], "あし":[]}; /* 入力項目に適する装備のみを抽出する */
+	self.postMessage(["progress",input_items]);
 	for (const part_name in raw_data) {
 		for (const equip_name in raw_data[part_name]) {
 			let input_compatible_flag = true;
@@ -327,6 +328,7 @@ self.addEventListener("message", e => {
 			}
 		}
 	}
+	self.postMessage(["progress",filtered_data]);
 	
 	
 	for (const clothes of filtered_data["ふく"]) {
