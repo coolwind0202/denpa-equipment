@@ -169,6 +169,7 @@ const reflect_output = (data) => {
 
 const button = document.getElementById("confirm-button");
 let now_searching_flag = false;
+let last_progress = "";
 
 button.addEventListener("click", () => {
 	const [condition, input_items] = get_input();
@@ -181,21 +182,20 @@ button.addEventListener("click", () => {
 	}
 
 	if (now_searching_flag) {
-		alert("現在検索を行っているため、新規に検索を開始できません。");
+		alert(`現在検索を行っているため、新規に検索を開始できません。\nログデータ：${last_progress}`);
 		return;
 	}
 	
 	let worker = new Worker("worker.js"); /* ボトルネックの処理なので、Web Workerに切り出した */
 
 	worker.addEventListener("message", e => {
-		console.log(e)
 		const [response_type, data] = e.data;
 		if (response_type == "progress") {
-			// console.log(data);
+			last_progress = data;
 		} else if (response_type == "result") {
 			reflect_output(data);
+			now_searching_flag = false;
 		}
-		now_searching_flag = false;
 	});
 
 	worker.postMessage([raw_data, condition, input_items]);
