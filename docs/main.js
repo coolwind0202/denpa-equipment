@@ -145,7 +145,7 @@ const get_input = () => {
 	return [condition, input_items];
 }
 
-const reflect_output = (data) => {
+const reflect_output = (equip_set) => {
 	const table = document.getElementsByTagName("table")[0];
 	const trs = document.getElementsByTagName("tr");
 	let node_number = 0; /* 見出し行と通常行の区別のための数値 */
@@ -157,7 +157,7 @@ const reflect_output = (data) => {
 
 	/* tableの子要素に追加する処理 */
 	const tr = document.createElement("tr");
-	for (const part in data) {
+	for (const part in equip_set.equips) {
 		const td = document.createElement("td");
 		td.innerHTML = part.name;
 		tr.appendChild(td);
