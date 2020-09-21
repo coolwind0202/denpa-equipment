@@ -314,11 +314,13 @@ self.addEventListener("message", e => {
 	let len_resolves = 0;
 	let i = 0;
 	const filtered_data = {"ふく": [], "かお": [], "くび": [], "うで": [], "せなか":[], "あし":[]}; /* 入力項目に適する装備のみを抽出する */
-	self.postMessage(["progress",input_items]);
 	for (const part_name in raw_data) {
 		for (const equip_name in raw_data[part_name]) {
 			let input_compatible_flag = true;
 			for (const input_item of input_items) {
+				console.log(input_item, raw_data[part_name][equip_name]);
+				console.log(input_item in raw_data[part_name][equip_name]);
+				console.log(raw_data[part_name][equip_name].hasOwnProperty(input_item));
 				if (!(input_item in raw_data[part_name][equip_name])) {
 					input_compatible_flag = false;
 				}
@@ -326,9 +328,11 @@ self.addEventListener("message", e => {
 			if (input_compatible_flag) {
 				filtered_data[part_name].push({...raw_data[part_name][equip_name], "name": equip_name});
 			}
+			break; /* テスト用 */
 		}
+		break; /* テスト用 */
+		
 	}
-	self.postMessage(["progress",filtered_data]);
 	
 	
 	for (const clothes of filtered_data["ふく"]) {
