@@ -168,12 +168,11 @@ const reflect_output = (data) => {
 }
 
 const button = document.getElementById("confirm-button");
+const progress = document.getElementsByTagName("progress")[0];
 let now_searching_flag = false;
-let last_progress = "";
 
 button.addEventListener("click", () => {
 	const [condition, input_items] = get_input();
-	console.log(input_items);
 	/* 指定効果を一切持っていない装備はraw_dataから除外して新しい連想配列を作成する処理 */
 
 	if (raw_data === null) {
@@ -182,7 +181,7 @@ button.addEventListener("click", () => {
 	}
 
 	if (now_searching_flag) {
-		alert(`${last_progress} 新規に検索を開始できません。`);
+		alert(`現在検索中のため、新規に検索を開始できません。`);
 		return;
 	}
 	
@@ -190,8 +189,10 @@ button.addEventListener("click", () => {
 
 	worker.addEventListener("message", e => {
 		const [response_type, data] = e.data;
-		if (response_type == "progress") {
-			last_progress = data;
+		if (response_type == "start-search") {
+			progress.max = data;
+		} else if (response_type == "progress") {
+			progress.value = data;
 		} else if (response_type == "result") {
 			reflect_output(data);
 			now_searching_flag = false;
