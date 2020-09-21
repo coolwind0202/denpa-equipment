@@ -325,10 +325,10 @@ self.addEventListener("message", e => {
 			if (input_compatible_flag) {
 				filtered_data[part_name].push({...raw_data[part_name][equip_name], "name": equip_name});
 			}
-			/* break;  テスト用 */
 		}
-		/* break;  テスト用 */
 		
+		if (!filtered_data[part_name].length) {
+			filtered_data[part_name].push({"name": "空装備枠"})
 	}
 	console.log(filtered_data);
 	
