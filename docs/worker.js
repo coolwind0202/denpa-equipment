@@ -328,7 +328,8 @@ self.addEventListener("message", e => {
 		}
 		
 		if (!filtered_data[part_name].length) {
-			filtered_data[part_name].push({"name": "空装備枠"})
+			filtered_data[part_name].push({"name": "空装備枠"});
+		}
 	}
 	console.log(filtered_data);
 	
