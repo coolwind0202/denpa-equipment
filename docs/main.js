@@ -146,7 +146,6 @@ const get_input = () => {
 }
 
 const reflect_output = (data) => {
-	console.log(data);
 	const table = document.getElementsByTagName("table")[0];
 	const trs = document.getElementsByTagName("tr");
 	let node_number = 0; /* 見出し行と通常行の区別のための数値 */
@@ -157,7 +156,7 @@ const reflect_output = (data) => {
 	}
 
 	/* tableの子要素に追加する処理 */
-	for (const row of data) {
+	for (const row in data) {
 		const tr = document.createElement("tr");
 		for (const part of row.equips) {
 			const td = document.createElement("td");
