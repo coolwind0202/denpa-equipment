@@ -106,7 +106,14 @@ const get_input = () => {
 	const condition = new EquipEffect();
 	const input_items = [];
 	for (const element of document.getElementsByTagName("input")) {
-		if (element.defaultValue !== element.value) input_items.push(element.id);
+      		if (element.type=="radio" || element.type=="checkbox") {
+        		if (element.defaultChecked !== element.checked && element.checked) {
+          			input_items.push(element.id);
+        		}
+      		} else if (element.defaultValue !== element.value) {
+		        input_items.push(element.id);
+      		}
+		
 		if (element.type != "radio" && element.type != "checkbox") {
 			for (const category_name in condition) {
 				for (const property_name in condition[category_name]) {
