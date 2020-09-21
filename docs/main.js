@@ -195,8 +195,10 @@ button.addEventListener("click", () => {
 			state_num.innerHTML = data;
 		} else if (response_type == "progress") {
 			progress.value = data;
-		} else if (response_type == "result") {
+		} else if (response_type == "hit") {
 			reflect_output(data);
+		} else if (response_type == "end-search") {
+			alert("検索を終了しました。");
 			now_searching_flag = false;
 		}
 	});
