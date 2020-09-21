@@ -304,34 +304,46 @@ class EquipSet {
 
 self.addEventListener("message", e => {
 	/* 処理内容 */
-	const [raw_data, condition] = e.data;
+	const [raw_data, condition, input_items] = e.data;
+	/* raw_data - 探索用装備データ - Object
+	 * condition - 検索条件 - EquipEffect
+	 * input_items - 入力が行われた項目 - Array
+	 */
 
 	let resolves = [];
 	let len_resolves = 0;
 	let i = 0;
-	for (const clothes in raw_data["ふく"]) {
-		for (const face in raw_data["かお"]) {
-			for (const neck in raw_data["くび"]) {
-				for (const arm in raw_data["うで"]) {
-					for (const back in raw_data["せなか"]) {
-						for (const leg in raw_data["あし"]) {
-							let e = new EquipSet(
-								{...raw_data["ふく"][clothes], "name":clothes},
-								{...raw_data["かお"][face], "name":face},
-								{...raw_data["くび"][neck], "name":neck},
-								{...raw_data["うで"][arm], "name":arm},
-								{...raw_data["せなか"][back], "name":back},
-								{...raw_data["あし"][leg], "name":leg}
-							);
-							if (i > 1000) {
-								self.postMessage(resolves)
-								return;
+	const filtered_data = {"ふく": [], "かお": [], "くび": [], "うで": [], "せなか":[], "あし":[]}; /* 入力項目に適する装備のみを抽出する */
+	for (const part_name in raw_data) {
+		for (const equip_name in raw_data[part_name]) {
+			let input_compatible_flag = true;
+			for (const input_item of input_items) {
+				if (!(input_item in raw_data[part_name][equip_name])) {
+					input_compatible_flag = false;
+				}
+			}
+			if (input_compatible_flag) {
+				filtered_data[part_name].push({...raw_data[part_name][equip_name], "name": equip_name});
+			}
+		}
+	}
+	
+	
+	for (const clothes of filtered_data["ふく"]) {
+		for (const face of filtered_data["かお"]) {
+			for (const neck of filtered_data["くび"]) {
+				for (const arm of filtered_data["うで"]) {
+					for (const back of filtered_data["せなか"]) {
+						for (const leg of filtered_data["あし"]) {
+							let e = new EquipSet(clothes,face,neck,arm,back,leg);
+							if (i % 10000 == 0) {
+								self.postMessage("progress",`${i} パターン目を探索中`)
 							}
 							if (e.status.judge_condition(condition)) {
 								resolves.push(e);
 								len_resolves++;
 								if (len_resolves >= 100) {
-									self.postMessage(resolves);
+									self.postMessage("result",resolves);
 				    					return;
 								}
 			    				}
@@ -343,6 +355,6 @@ self.addEventListener("message", e => {
 
 		}
 	}
-	self.postMessage(resolves)
+	self.postMessage("result",resolves)
 
 	});
