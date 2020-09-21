@@ -179,7 +179,12 @@ button.addEventListener("click", () => {
 	let worker = new Worker("worker.js"); /* ボトルネックの処理なので、Web Workerに切り出した */
 
 	worker.addEventListener("message", e => {
-		reflect_output(e.data);
+		const [response_type, data] = e.data;
+		if (response_type == "progress") {
+			console.log(data);
+		} else if (response_type == "result") {
+			reflect_output(data);
+		}
 		now_searching_flag = false;
 	});
 
