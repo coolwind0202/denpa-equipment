@@ -146,9 +146,14 @@ const get_input = () => {
 }
 
 const reset_output = () => {
-	const tr = document.getElementsByTagName("tr")[0];
+	const trs = document.getElementsByTagName("tr");
+	let i = 0;
 	
-	tr.parentNode.removeChild(tr);
+	for (const tr of trs) {
+		i++;
+		if (i == 1) continue;
+		tr.parentNode.removeChild(tr);
+	}
 }
 
 const reflect_output = (equip_set) => {
