@@ -313,6 +313,7 @@ self.addEventListener("message", e => {
 	let resolves = [];
 	let len_resolves = 0;
 	let i = 0;
+	let number_of_candidates = 1;
 	const filtered_data = {"ふく": [], "かお": [], "くび": [], "うで": [], "せなか":[], "あし":[]}; /* 入力項目に適する装備のみを抽出する */
 	for (const part_name in raw_data) {
 		for (const equip_name in raw_data[part_name]) {
@@ -327,8 +328,9 @@ self.addEventListener("message", e => {
 		if (!filtered_data[part_name].length) {
 			filtered_data[part_name].push({"name": "空装備枠"});
 		}
+		number_of_candidates *= filtered_data[part_name].length;
 	}
-	console.log(filtered_data);
+	self.postMessage(["start-search", number_of_candidates]);
 	
 	for (const clothes of filtered_data["ふく"]) {
 		for (const face of filtered_data["かお"]) {
@@ -338,7 +340,7 @@ self.addEventListener("message", e => {
 						for (const leg of filtered_data["あし"]) {
 							let e = new EquipSet(clothes,face,neck,arm,back,leg);
 							if (i % 10000 == 0) {
-								self.postMessage(["progress",`${i} パターン目を探索中`]);
+								self.postMessage(["progress",i]);
 							}
 							if (e.status.judge_condition(condition)) {
 								resolves.push(e);
